@@ -15,8 +15,17 @@
 <script>
         function getGenda(){           
         var genda = document.querySelector('input[name="genda"]:checked').value;
-
+        if(!genda){
+          alert('Select At least One');
+          return false;
+        }
+        else{
+          alert(genda);
+        }
       }
+
+
+      
 
 
 
