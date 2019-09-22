@@ -67,6 +67,13 @@ Date Of Birth: <input type="text" id="dob" value="">
       function gen_Name(){
         var genda = document.querySelector('input[name="genda"]:checked').value;
         var dob1 = document.getElementById("dob").value;
+        //Split dob into individual indices
+        var dobs = dob1.split(" ");
+        //Asigned variables to the indices as value
+        var fmonth = dobs[0];
+        var fdate = dobs[1];
+        var fyear = dobs[2];
+        
         
           
 
