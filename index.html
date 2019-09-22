@@ -40,8 +40,16 @@ Date Of Birth: <input type="text" id="dob" value="">
           var d = parseInt(fdate);
           //Split the year variable to two pairs
           //step 1 split them into 4 strings
-          var y = fyear.split("");
-          
+          var b = fyear.split("");
+          //step 2 Concat to two pairs
+          var x = b[0].concat(b[1]);//19
+          var g = b[2].concat(b[3]);//95
+          //This gives out x as 19 and g as 95 
+          //Step 3
+          //Convert x and g to integers for mathematical operations
+          var c = parseInt(x);
+          var y = parseInt(y);
+
 
 
 
