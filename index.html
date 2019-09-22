@@ -11,9 +11,10 @@
 Date Of Birth: <input type="text" id="dob" value="">
 <input type="radio" name="genda" checked id="Female" value="Female"> Female
 <input type="radio" name="genda" id="Male" value="Male"> Male
-<button onclick="getGenda()">Generate Akan Name</button>
+<button onclick="gen_Name()">Generate Akan Name</button>
 </body>
 <script>
+    /*
         function getGenda(){           
         var genda = document.querySelector('input[name="genda"]:checked').value;
         if(!genda){
@@ -24,7 +25,7 @@ Date Of Birth: <input type="text" id="dob" value="">
           alert(genda);
         }
       }
-      /*
+      
       function myDob(){
           var dob8 = "05 05 1995";
           var dob8 = document.getElementById("dob").value;
@@ -73,31 +74,67 @@ Date Of Birth: <input type="text" id="dob" value="">
         var fmonth = dobs[0];
         var fdate = dobs[1];
         var fyear = dobs[2];
+        var m = parseInt(fmonth);
+        var d = parseInt(fdate);
         //Split fyear to 2 strings by concating
-        var c = yearc[0].concat(yearc[1]);
-        var y = yearc[2].concat(yearc[3]);
+        var c = fyear[0].concat(fyear[1]);
+        var y = fyear[2].concat(fyear[3]);
         //convert c and y to integer
+        var c = parseInt(c);
+        var y = parseInt(y);
+        fd = Math.round( ( (c/4) -2*c-1) + ((5*y/4) ) + ((26*(m+1)/10)) + d ) % 7;
 
-
-        
-        
-          
-
-
-
-
-
-
-
+        if(!genda){
+          alert('No genda was selected. Try again.');
+          return false;
+        }
+        else if(genda === 'Female' && fd === 0){
+          alert("Akosua");
+        }
+        else if(genda === 'Male' && fd === 0){
+            alert("Kwasi");
+        }
+        else if(genda === 'Female' && fd === 1){
+          alert("Adwoa");
+        }
+        else if(genda === 'Male' && fd === 1){
+            alert("Kwadwo");
+        }
+        else if(genda === 'Female' && fd === 2){
+          alert("Abenaa");
+        }
+        else if(genda === 'Male' && fd === 2){
+            alert("Kwabena");
+        }
+        else if(genda === 'Female' && fd === 3){
+          alert("Akua");
+        }
+        else if(genda === 'Male' && fd === 3){
+            alert("Kwaku");
+        }
+        else if(genda === 'Female' && fd === 4){
+          alert("Yaa");
+        }
+        else if(genda === 'Male' && fd === 4){
+            alert("Yaw");
+        }
+        else if(genda === 'Female' && fd === 5){
+          alert("Afua");
+        }
+        else if(genda === 'Male' && fd === 5){
+            alert("Kofi");
+        }
+        else if(genda === 'Female' && fd === 6){
+          alert("Ama");
+        }
+        else if(genda === 'Male' && fd === 6){
+            alert("Kwame");
+        }else{
+            alert("Try Again");
+        }
 
 
       }
-
-      
-
-
-
-
 
 
 </script>
