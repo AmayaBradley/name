@@ -1,18 +1,86 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title>
-        Akan Name Generator
-    </title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-img {
+   background-image: url("traditions-of-ghana-warrior-king-faces.jpg");
+
+  min-height: 380px;
+ 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+
+.container {
+  position: absolute;
+  right: 0;
+  margin: 20px;
+  max-width: 300px;
+  padding: 16px;
+  background-color: white;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus{
+  background-color: #ddd;
+  outline: none;
+}
+
+
+.btn {
+  background-color: black;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+</style>
 </head>
-
-
 <body>
 
-Date Of Birth: <input type="text" id="dob" value="">
-<input type="radio" name="genda" checked id="Female" value="Female"> Female
-<input type="radio" name="genda" id="Male" value="Male"> Male
-<button onclick="gen_Name()">Generate Akan Name</button>
-</body>
+
+<div class="bg-img">
+  <form action="" class="container">
+    <h1>Details Here</h1>
+
+    <label for="email"><b>Date Of Birth</b></label>
+    <input type="text" id="dob" placeholder="eg 09 06 1990"value="" required>
+    
+
+    <label for="psw"><b>Gender</b></label>
+    <br>
+           <label> <input type="radio" name="genda" checked id="Female" value="Female">Female</label>
+        <label><input type="radio" name="genda" id="Male" value="Male" checked>Male</label>
+
+    <button onclick="gen_Name()" class="btn">Get Name</button>
+  </form>
+</div>
 <script>
     /*
         function getGenda(){           
@@ -52,19 +120,10 @@ Date Of Birth: <input type="text" id="dob" value="">
           var c = parseInt(x);
           var y = parseInt(g);
           window.alert(( ( (c/4) -2*c-1) + ((5*y/4) ) + ((26*(m+1)/10)) + d ) % 7);
-          
-          
-
-
-
-
-
-
-
-
       }*/
       //Function to generate the name
       //Variable declarion
+
       function gen_Name(){
         var genda = document.querySelector('input[name="genda"]:checked').value;
         var dob1 = document.getElementById("dob").value;
@@ -82,6 +141,13 @@ Date Of Birth: <input type="text" id="dob" value="">
         //convert c and y to integer
         var c = parseInt(c);
         var y = parseInt(y);
+        if ( d < 0 || d > 31 ) {
+            alert("Invalid Day Or Date")
+        }else if(m < 0 || m > 12){
+            alert ("Invalid Day Or Date")
+
+
+        }else{
         fd = Math.round( ( (c/4) -2*c-1) + ((5*y/4) ) + ((26*(m+1)/10)) + d ) % 7;
 
         if(!genda){
@@ -135,8 +201,11 @@ Date Of Birth: <input type="text" id="dob" value="">
 
 
       }
+    }
 
 
 </script>
-</html>
 
+
+</body>
+</html>
