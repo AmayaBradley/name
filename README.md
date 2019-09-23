@@ -10,7 +10,7 @@ I this project, HTML was used to develop the basic structure of the page.CSS was
 This is is an open source code therefore ideas and corrections are welcomed by contacting the email sufimariam8@gmail.com .
 ### License
 *MIT License
-Copyright (c) [2019] [Mariam Osman]
+Copyright (c) [2019] [Amaya Bradley]
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
